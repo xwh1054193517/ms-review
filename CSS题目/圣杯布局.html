@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 圣杯布局 -->
+
+<body>
+    <div class="header">头部</div>
+    <div class="main clearfix">
+
+        <div class="center">中间自适应</div>
+        <div class="left">左列定宽</div>
+        <div class="right">右列定宽</div>
+    </div>
+    <div class="footer">底部</div>
+</body>
+<style>
+    .header {
+        height: 40px;
+        background: lightblue;
+    }
+    
+    .footer {
+        height: 100px;
+        background: lightcoral;
+    }
+    
+    .center {
+        float: left;
+        width: 100%;
+        height: 500px;
+        background: lightgray;
+    }
+    
+    .left {
+        float: left;
+        margin-left: -100%;
+        width: 200px;
+        height: 500px;
+        background: lightpink;
+    }
+    
+    .right {
+        width: 300px;
+        margin-left: -300px;
+        height: 500px;
+        float: left;
+        background: lightgreen;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .main {
+        padding-left: 200px;
+        padding-right: 300px;
+    }
+    
+    .left {
+        position: relative;
+        left: -200px;
+    }
+    
+    .right {
+        position: relative;
+        right: -300px;
+    }
+</style>
+
+</html>

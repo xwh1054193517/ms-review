@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Document</title>
+</head>
+<body>
+  <canvas id="rect" width="150" height="150"></canvas>
+  <canvas id="triangle" width="150" height="150"></canvas>
+</body>
+<script>
+  function draw() {
+  var canvas = document.getElementById("rect");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d')
+    // 绘制一个填充的矩形
+    ctx.fillRect(25,25,100,100)
+    // 清除指定矩形区域，让清除部分完全透明。
+    ctx.clearRect(45,45,60,60)
+    // 绘制一个矩形的边框
+    ctx.strokeRect(50,50,50,50)
+  }
+}
+function drawTri() {
+  var canvas = document.getElementById('triangle');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    // 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    ctx.fill();
+
+    //描边三角形
+    ctx.beginPath()
+    ctx.moveTo(125,125)
+    ctx.lineTo(125,45)
+    ctx.lineTo(45,125)
+    ctx.closePath()
+    ctx.stroke()
+  }
+// stroke()
+// 通过线条来绘制图形轮廓。
+
+// moveTo(x, y)
+// 将笔触移动到指定的坐标 x 以及 y 上。
+
+// lineTo(x, y)
+// 绘制一条从当前位置到指定 x 以及 y 位置的直线。
+
+// fill()
+// 通过填充路径的内容区域生成实心的图形。
+
+// beginPath()
+// 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。
+
+// closePath()
+// 闭合路径之后图形绘制命令又重新指向到上下文中。
+}
+draw()
+drawTri()
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>todo</li>
+    <li>todo</li>
+    <li>todo</li>
+    <li>todo</li>
+    <li>todo</li>
+  </ul>
+</body>
+<script>
+  var ulElement=document.getElementById('ul')
+  ul.addEventListener('click',function(e){
+    if(e.target.nodeName.toLowerCase()==='li'){
+      var liElement=e.target
+      if(liElement.innerText==='todo'){
+        liElement.innerText='doing'
+      }else if(liElement.innerText==='doing'){
+        liElement.innerText='done'
+      }
+    }
+  })
+
+  function Triangle(n){
+    let res=''
+    for(let i=1;i<=n;i++){
+      for(let j=n-i;j>=1;j--){
+        res+=' '
+      }
+      for(let k=1;k<=2*i-1;k++){
+        res+='*'
+      }
+      res+='\n'
+    }
+    console.log(res)
+  }
+  Triangle(10)
+</script>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 两栏 -->
+    <!-- <div class="box">
+        <div class="left">左边</div>
+        <div class="right">右边</div>
+    </div> -->
+    <!-- 三栏 -->
+    <div class="wrap">
+        <div class="left">左侧</div>
+        <div class="middle">中间</div>
+        <div class="right">右侧</div>
+
+    </div>
+    <!-- <div class="main-wrapper">
+        <div class="main">中间自适应</div>
+    </div>
+    <div class="left">左边固定宽度</div>
+    <div class="right">右边固定宽度</div> -->
+</body>
+<style>
+    /* 三栏 使用float+margin*/
+    /* <!-- 生成BFC，计算高度时考虑浮动的元素 --> */
+    /* .wrap {
+      background: #eee;
+      overflow: hidden;
+     
+      padding: 20px;
+      height: 200px;
+  }
+  
+  .left {
+      width: 200px;
+      height: 200px;
+      float: left;
+      background: coral;
+  }
+  
+  .right {
+      width: 120px;
+      height: 200px;
+      float: right;
+      background: lightblue;
+  }
+  
+  .middle {
+      margin-left: 220px;
+      height: 200px;
+      background: lightpink;
+      margin-right: 140px;
+  } */
+    /* 三栏 使用定位+margin*/
+    /* .wrap {
+        position: relative;
+    }
+    
+    .left,
+    .right,
+    .middle {
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+    }
+    
+    .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        background: green;
+    }
+    
+    .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        background: green;
+    }
+    
+    .middle {
+        margin: 0 110px;
+        background: black;
+        color: white;
+    } */
+    /* 三栏布局用float和负margin */
+    /* .left,
+    .right,
+    .main {
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+    }
+    
+    .main-wrapper {
+        float: left;
+        width: 100%;
+    }
+    
+    .main {
+        margin: 0 110px;
+        background: black;
+        color: white;
+    }
+    
+    .left,
+    .right {
+        float: left;
+        width: 100px;
+        margin-left: -100%;
+        background: green;
+    }
+    
+    .right {
+        margin-left: -100px;
+    } */
+    
+    .wrap {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 300px auto 300px;
+    }
+    
+    .left,
+    .right,
+    .middle {
+        height: 100px;
+    }
+    
+    .left {
+        background: coral;
+    }
+    
+    .right {
+        background: lightblue;
+    }
+    
+    .middle {
+        background: #555;
+    }
+</style>
+<style>
+    /* 两栏 */
+    /* .box {
+      overflow: hidden;
+  }
+  
+  .left {
+      float: left;
+      width: 200px;
+      background-color: gray;
+      height: 400px;
+  }
+  
+  .right {
+      margin-left: 210px;
+      background-color: lightgray;
+      height: 200px;
+  } */
+    /*   
+  .box {
+      display: flex;
+  }
+  
+  .left {
+      background-color: gray;
+      width: 200px;
+      height: 400px;
+  }
+  
+  .right {
+      flex: 1;
+      height: 400px;
+      background-color: lightgray;
+  } */
+</style>
+
+</html>
+
+<!-- <style>
+  .container {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .left,
+  .right,
+  .main {
+    display: table-cell;
+  }
+
+  .left,
+  .right {
+    width: 100px;
+    background: green;
+  }
+
+  .main {
+    background: black;
+    color: white;
+    width: 100%;
+  }
+</style>
+
+<div class="container">
+  <div class="left">左边固定宽度</div>
+  <div class="main">中间自适应</div>
+  <div class="right">右边固定宽度</div>
+</div> -->
+
+<!-- <style type="text/css">
+  .wrap {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .left,
+  .right,
+  .middle {
+      height: 100px;
+  }
+
+  .left {
+      width: 200px;
+      background: coral;
+  }
+
+  .right {
+      width: 120px;
+      background: lightblue;
+  }
+
+  .middle {
+      background: #555;
+      width: 100%;
+      margin: 0 20px;
+  }
+</style>
+<div class="wrap">
+  <div class="left">左侧</div>
+  <div class="middle">中间</div>
+  <div class="right">右侧</div>
+</div> -->
+
+<!-- <style>
+    .wrap {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 300px auto 300px;
+    }
+
+    .left,
+    .right,
+    .middle {
+        height: 100px;
+    }
+
+    .left {
+        background: coral;
+    }
+
+    .right {
+        width: 300px;
+        background: lightblue;
+    }
+
+    .middle {
+        background: #555;
+    }
+</style>
+<div class="wrap">
+    <div class="left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="right">右侧</div>
+</div> -->
